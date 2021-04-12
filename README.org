@@ -1,0 +1,8 @@
+* TravelType - ECE 477 Spring 2021 - Team 2
+TravelType is a semi-wireless, portable, split ergonomic keyboard. This is the firmware for the wired "central" module. It is intended to be run on an STM32L053R8Tx microcontroller.
+
+Its purpose is to receive keypresses via BLE from the halves, and translate them into keycodes to be sent over USB to a computer.
+** Building
+Compilation requires the [[https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads][ARM GCC]] toolchain and [[https://sourceware.org/newlib/][Newlib]] embedded libc. Make sure ~arm-none-eabi-gcc~ and ~arm-none-eabi-objcopy~ are in your path. Simply run ~make~ in this directory to compile everything; binaries will be in ~build/~.
+** Flashing
+Flashing requires [[http://openocd.org/getting-openocd/][OpenOCD]], and debugging also requires ~arm-none-eabi-gdb~, which should be included with your ARM GCC toolchain. To flash, run ~make run~.
