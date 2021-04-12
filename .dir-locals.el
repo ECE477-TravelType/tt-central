@@ -1,3 +1,5 @@
+;;; This file contains some custom functions and keybinds for working on this project in emacs.
+
 ((nil . ((eval . (progn
                    (defvar tt-central-mode-map (make-sparse-keymap)
                      "Keymap while tt-central-mode is active.")
@@ -15,7 +17,7 @@
                      (let* ((mk-dir (locate-dominating-file (buffer-file-name) "Makefile"))
                             (compile-command (concat "make -k -C " (shell-quote-argument mk-dir) " run"))
                             (compilation-read-command nil))
-                       (call-inter.actively 'compile)))
+                       (call-interactively 'compile)))
 
                    (defun oats/tt-central-gdb ()
                      (interactive)
